@@ -16,7 +16,12 @@ repositories {
 kotlin {
     cocoapods {
         version = projectVersion
+        homepage = "https://github.com/LandryNorris/Analytiks"
+        summary = "Firebase Analytics logging for KMM on Android and iOS"
+        license = "Apache 2.0"
         name = "AnalytiksFirebase"
+
+        ios.deploymentTarget = "11.0"
 
         pod("FirebaseAnalytics")
 
@@ -28,12 +33,12 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 31
     namespace = "io.github.landrynorris.analytiks.firebase"
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 31
     }
 }
 
@@ -76,8 +81,8 @@ kotlin {
             dependsOn(commonMain)
         }
 
-        val iosX64Main by getting { dependsOn(iosMain) }
+        //val iosX64Main by getting { dependsOn(iosMain) }
         val iosArm64Main by getting { dependsOn(iosMain) }
-        val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
+        //val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
     }
 }
