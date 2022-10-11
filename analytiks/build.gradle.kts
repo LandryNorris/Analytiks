@@ -33,7 +33,7 @@ kotlin {
     androidNativeArm64()
     androidNativeX86()
     androidNativeX64()
-    iosArm32()
+    iosX64()
     iosArm64()
     iosSimulatorArm64()
     macosX64()
