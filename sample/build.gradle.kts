@@ -2,11 +2,12 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("native.cocoapods")
+    id("org.jetbrains.compose") version "1.2.0-rc01"
 }
 
 val projectVersion = "0.0.1"
 
-group = "io.github.landrynorris.analytiks"
+group = "io.github.landrynorris.analytiks.sample"
 version = projectVersion
 
 repositories {
@@ -29,6 +30,8 @@ kotlin {
 
 android {
     compileSdk = 32
+    namespace = "io.github.landrynorris.analytiks.sample"
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = 21
         targetSdk = 32
@@ -38,18 +41,7 @@ android {
 kotlin {
     android()
     jvm()
-    js(BOTH) {
-        browser {
-            commonWebpackConfig {
-                cssSupport.enabled = true
-            }
-        }
-    }
 
-    androidNativeArm32()
-    androidNativeArm64()
-    androidNativeX86()
-    androidNativeX64()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -59,6 +51,11 @@ kotlin {
             dependencies {
                 implementation(project(":analytiks"))
                 implementation(project(":analytiks-firebase"))
+
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.ui)
+                implementation(compose.material)
             }
         }
         val commonTest by getting {

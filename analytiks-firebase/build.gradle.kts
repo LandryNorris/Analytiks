@@ -29,6 +29,8 @@ kotlin {
 
 android {
     compileSdk = 32
+    namespace = "io.github.landrynorris.analytiks.firebase"
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = 21
         targetSdk = 32

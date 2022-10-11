@@ -12,6 +12,8 @@ repositories {
 
 android {
     compileSdk = 32
+    namespace = "io.github.landrynorris.analytiks"
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = 21
         targetSdk = 32
