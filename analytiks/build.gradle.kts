@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.7.20"
+    kotlin("multiplatform")
     id("com.android.library")
 }
 
@@ -8,6 +8,14 @@ version = "0.0.1"
 
 repositories {
     mavenCentral()
+}
+
+android {
+    compileSdk = 32
+    defaultConfig {
+        minSdk = 21
+        targetSdk = 32
+    }
 }
 
 kotlin {

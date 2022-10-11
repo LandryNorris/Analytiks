@@ -20,7 +20,3 @@ allprojects {
         maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
     }
 }
-
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
-}
