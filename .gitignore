@@ -4,4 +4,5 @@ build/
 **/build/
 local.properties
 credentials.properties
+secretkey.gpg
 *.hprof
