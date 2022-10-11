@@ -49,13 +49,12 @@ kotlin {
 
     iosX64()
     iosArm64()
-    iosSimulatorArm64()
+    //iosSimulatorArm64()
 
     sourceSets {
         val commonMain by getting {
             dependencies {
                 implementation(project(":analytiks"))
-                implementation(project(":analytiks-firebase"))
 
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -71,14 +70,22 @@ kotlin {
 
         val androidMain by getting {
             dependsOn(commonMain)
+
+            dependencies {
+                implementation(project(":analytiks-firebase"))
+            }
         }
 
         val iosMain by creating {
             dependsOn(commonMain)
+
+            dependencies {
+                implementation(project(":analytiks-firebase"))
+            }
         }
 
         val iosX64Main by getting { dependsOn(iosMain) }
         val iosArm64Main by getting { dependsOn(iosMain) }
-        val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
+        //val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
     }
 }

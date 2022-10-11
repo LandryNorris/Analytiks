@@ -44,22 +44,10 @@ android {
 
 kotlin {
     android()
-    jvm()
-    js(BOTH) {
-        browser {
-            commonWebpackConfig {
-                cssSupport.enabled = true
-            }
-        }
-    }
 
-    androidNativeArm32()
-    androidNativeArm64()
-    androidNativeX86()
-    androidNativeX64()
     iosX64()
     iosArm64()
-    iosSimulatorArm64()
+    //iosSimulatorArm64()
 
     sourceSets {
         val commonMain by getting {
@@ -75,13 +63,18 @@ kotlin {
 
         val androidMain by getting {
             dependsOn(commonMain)
+
+            dependencies {
+                //implementation("com.google.firebase:firebase-bom:30.5.0")
+                implementation("com.google.firebase:firebase-analytics-ktx:21.1.1")
+            }
         }
 
         val iosMain by creating {
             dependsOn(commonMain)
         }
 
-        //val iosX64Main by getting { dependsOn(iosMain) }
+        val iosX64Main by getting { dependsOn(iosMain) }
         val iosArm64Main by getting { dependsOn(iosMain) }
         //val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
     }
