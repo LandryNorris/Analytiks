@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.landrynorris.analytiks"
-version = "0.0.1"
+version = "0.0.2"
 
 val properties by lazy {
     Properties().also { it.load(project.rootProject.file("credentials.properties").inputStream()) }
