@@ -34,7 +34,9 @@ android {
 }
 
 kotlin {
-    android()
+    android {
+        publishLibraryVariants("debug", "release")
+    }
     jvm()
     js(BOTH) {
         browser {

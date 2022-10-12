@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'AnalytiksFirebase'
-    spec.version                  = '0.0.1'
+    spec.version                  = '0.0.2'
     spec.homepage                 = 'https://github.com/LandryNorris/Analytiks'
     spec.source                   = { :http=> ''}
     spec.authors                  = ''

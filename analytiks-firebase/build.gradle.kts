@@ -56,7 +56,9 @@ android {
 }
 
 kotlin {
-    android()
+    android {
+        publishLibraryVariants("debug", "release")
+    }
 
     iosX64()
     iosArm64()
