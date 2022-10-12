@@ -14,7 +14,7 @@ object Analytiks {
         loggers.addAll(newLoggers)
     }
 
-    fun logEvent(name: String, extras: Map<String, Any>) {
+    fun logEvent(name: String, extras: Map<String, Any> = mapOf()) {
         loggers.forEach {
             it.logEvent(name, extras)
         }
