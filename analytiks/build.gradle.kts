@@ -44,6 +44,8 @@ kotlin {
                 cssSupport.enabled = true
             }
         }
+
+        nodejs()
     }
 
     androidNativeArm32()
@@ -68,10 +70,26 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
-        val jvmMain by getting
-        val jvmTest by getting
-        val jsMain by getting
-        val jsTest by getting
+
+        val filesMain by creating {
+            dependsOn(commonMain)
+            dependencies {
+                implementation("com.squareup.okio:okio:3.2.0")
+            }
+        }
+
+        val androidMain by getting { dependsOn(filesMain) }
+        val iosX64Main by getting { dependsOn(filesMain) }
+        val iosArm64Main by getting { dependsOn(filesMain) }
+        val iosSimulatorArm64Main by getting { dependsOn(filesMain) }
+        val macosArm64Main by getting { dependsOn(filesMain) }
+        val macosX64Main by getting { dependsOn(filesMain) }
+        val linuxX64Main by getting { dependsOn(filesMain) }
+        val mingwX64Main by getting { dependsOn(filesMain) }
+        val jvmMain by getting { dependsOn(filesMain) }
+        val jvmTest by getting { dependsOn(filesMain) }
+        val jsMain by getting { dependsOn(filesMain) }
+        val jsTest by getting { dependsOn(filesMain) }
     }
 }
 
