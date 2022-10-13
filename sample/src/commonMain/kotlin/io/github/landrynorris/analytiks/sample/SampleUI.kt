@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 
 @Composable
-fun SampleUI(logic: SampleComponent) {
+internal fun SampleUI(logic: SampleComponent) {
     LaunchedEffect(Unit) {
         logic.onLaunch()
     }

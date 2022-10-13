@@ -23,7 +23,7 @@ object Analytiks {
     /**
      * Log an event using each analytics logger.
      */
-    fun logEvent(name: String, extras: Map<String, Any> = mapOf()) {
+    fun logEvent(name: String, extras: Map<String, Any?> = mapOf()) {
         loggers.forEach {
             it.logEvent(name, extras)
         }

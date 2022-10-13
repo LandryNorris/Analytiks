@@ -49,7 +49,7 @@ kotlin {
 
     iosX64()
     iosArm64()
-    //iosSimulatorArm64()
+    iosSimulatorArm64()
 
     sourceSets {
         val commonMain by getting {
@@ -86,6 +86,15 @@ kotlin {
 
         val iosX64Main by getting { dependsOn(iosMain) }
         val iosArm64Main by getting { dependsOn(iosMain) }
-        //val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
+        val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
+    }
+}
+
+kotlin {
+    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
+        binaries.all {
+            // TODO: the current compose binary surprises LLVM, so disable checks for now.
+            freeCompilerArgs += "-Xdisable-phases=VerifyBitcode"
+        }
     }
 }
