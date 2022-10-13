@@ -9,7 +9,7 @@ class FileLogger(path: String, fileSystem: FileSystem): TextLogger {
     private val file = fileSystem.appendingSink(path.toPath()).buffer()
 
     override fun logText(text: String) {
-        file.writeUtf8(text)
+        file.writeUtf8(text + '\n')
     }
 
     fun close() = file.close()
