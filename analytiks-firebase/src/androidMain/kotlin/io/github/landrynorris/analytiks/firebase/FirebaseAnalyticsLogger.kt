@@ -11,7 +11,7 @@ actual class FirebaseAnalyticsLogger actual constructor(): AnalytiksLogger {
         Firebase.analytics
     }
 
-    actual override fun logEvent(name: String, extras: Map<String, Any>) {
+    actual override fun logEvent(name: String, extras: Map<String, Any?>) {
         firebase.logEvent(name) {
             extras.entries.forEach {
                 when(it.value) {

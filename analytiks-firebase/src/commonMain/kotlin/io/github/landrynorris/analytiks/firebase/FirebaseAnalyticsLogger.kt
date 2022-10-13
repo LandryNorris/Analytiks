@@ -6,5 +6,5 @@ expect class FirebaseAnalyticsLogger(): AnalytiksLogger {
     /**
      * Log an Event to Firebase Analytics
      */
-    override fun logEvent(name: String, extras: Map<String, Any>)
+    override fun logEvent(name: String, extras: Map<String, Any?>)
 }

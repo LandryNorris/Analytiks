@@ -4,5 +4,5 @@ interface AnalytiksLogger {
     /**
      * Log an analytics event
      */
-    fun logEvent(name: String, extras: Map<String, Any>)
+    fun logEvent(name: String, extras: Map<String, Any?>)
 }

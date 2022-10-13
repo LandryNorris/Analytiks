@@ -5,7 +5,7 @@ import io.github.landrynorris.analytiks.AnalytiksLogger
 class TestLogger: AnalytiksLogger {
     private val logs = arrayListOf<LogEvent>()
 
-    override fun logEvent(name: String, extras: Map<String, Any>) {
+    override fun logEvent(name: String, extras: Map<String, Any?>) {
         logs.add(LogEvent(name, extras))
     }
 
