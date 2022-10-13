@@ -6,3 +6,4 @@ local.properties
 credentials.properties
 secretkey.gpg
 *.hprof
+server-sample/logs.txt
