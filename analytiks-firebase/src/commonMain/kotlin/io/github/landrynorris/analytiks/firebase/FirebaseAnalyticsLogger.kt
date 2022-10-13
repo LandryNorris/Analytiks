@@ -2,7 +2,7 @@ package io.github.landrynorris.analytiks.firebase
 
 import io.github.landrynorris.analytiks.AnalytiksLogger
 
-expect class FirebaseAnalyticsLogger: AnalytiksLogger {
+expect class FirebaseAnalyticsLogger(): AnalytiksLogger {
     /**
      * Log an Event to Firebase Analytics
      */

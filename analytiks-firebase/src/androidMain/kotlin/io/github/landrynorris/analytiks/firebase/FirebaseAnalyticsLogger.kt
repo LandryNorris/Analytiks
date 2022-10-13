@@ -6,7 +6,7 @@ import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.ktx.Firebase
 import io.github.landrynorris.analytiks.AnalytiksLogger
 
-actual class FirebaseAnalyticsLogger: AnalytiksLogger {
+actual class FirebaseAnalyticsLogger actual constructor(): AnalytiksLogger {
     private val firebase by lazy {
         Firebase.analytics
     }

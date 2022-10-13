@@ -9,7 +9,7 @@ plugins {
     id("signing")
 }
 
-val projectVersion = "0.0.2"
+val projectVersion = "0.0.3"
 
 group = "io.github.landrynorris.analytiks"
 version = projectVersion

@@ -15,6 +15,6 @@ Using this library
 Add the following to your build.gradle
 
 ```kotlin
-implementation("io.github.landrynorris.analytiks:analytics:0.0.2")
-implementation("io.github.landrynorris.analytiks:analytics-firebase:0.0.2") //for firebase integration
+implementation("io.github.landrynorris.analytiks:analytics:0.0.3")
+implementation("io.github.landrynorris.analytiks:analytics-firebase:0.0.3") //for firebase integration
 ```
