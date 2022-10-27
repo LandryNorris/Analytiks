@@ -64,10 +64,13 @@ kotlin {
     mingwX86()
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(project(":analytiks"))
+            }
+        }
         val commonTest by getting {
             dependencies {
-                implementation(project(":analytiks-test"))
                 implementation(kotlin("test"))
             }
         }
